@@ -17,7 +17,6 @@ var sumOfNums = function(numsArray){
   }
   return sum;
 };
-sumOfNums();
 
 // #2
 // Input: an array of numbers
