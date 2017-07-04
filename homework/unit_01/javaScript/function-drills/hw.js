@@ -37,14 +37,7 @@ var numsGreaterThanTen = function(numsArray){
 //         `false` otherwise
 // Edge Case: If the input array is empty, the function should return `true`.
 var allGreaterThanTen = function(numsArray) {
-  for (var i = 0; i < numsArray.length; i++) {
-    if (numsArray[i] > 10) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
+
 };
 
 // #4
