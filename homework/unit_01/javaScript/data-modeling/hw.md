@@ -60,13 +60,54 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+Tasks:
+  name
+  when it's begun
+  when it's completed
+
+Projects:
+  name
+  description
+  set of tasks
+
+var tasks = {
+  name: 'clean room',
+  dateStarted: '06/01/17',
+  dateCompleted: 'unfinished',
+};
+
+var projects = {
+  name: 'Project 1',
+  description: 'clean entire room',
+  setOfTasks: ['clean house', 'clean room', 'cook', 'do laundry', 'grocery shopping'],
+};
+
+These choices make sense for the app because it keeps track of tasks and projects.
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+Pictures:
+  name of photo
+  date of pic taken
+  url 
+
+Albums:
+  name of album
+  set of pics
+
+var photos = {
+  name: 'pic of the 4th',
+  date: '7/4/17',
+  url: 'mypics.com'
+};
+var albums = {
+  nameOfAlbum: 'holiday pics',
+  setOfPics: ['pic at the beach', 'fireworks', '4th of july', 'family on the 4th'],
+}
+
+These make sense for the app because it keeps track of the info regarding the photos and albums, the main elements of the app.
 
 ### 3. Home Automation Manager
 
@@ -75,7 +116,23 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+Lights:
+  location
+  brightness
+
+House:
+  temperature
+  set of lights
+  
+var lights = {
+  location: 'living room',
+  brightness: 'very bright',
+};
+var house = {
+  temperature: '70 degrees',
+  setOfLights: [living room, bedroom1, office, kitchen],
+};
+ The two main items that the app keeps track of are the lights and other elements in the house.
 
 ### 4. Sneaker Store
 
@@ -83,7 +140,28 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+> Item:
+  type:
+  price:
+  color:
+
+Order:
+order items
+quantity
+date of purchase
+
+var item = {
+  type: 'sneaker',
+  price: '$80',
+  color: 'green',
+};
+var order = {
+  item: 'sneaker,
+  quantity: 1,
+  date of purchase: '06/26/17',
+};
+
+It makes sense to keep track of the items and the order elements because those are the main elements in the app.
 
 ## Representing Abstractions in Code
 
@@ -139,7 +217,7 @@ var exampleLine = {
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
-> Answer here
+> The main disadvantage for this strategy is that the number of stops from one station to another is not being tracked by either item. The main advantage is that each station and rail line will be easy for the user to find.
 
 ### 6. Doctor Appointment App
 
@@ -242,7 +320,9 @@ Under what circumstances might one representation be a better choice than the
 other? Are there any circumstances in which the other representation might be
 the better choice?
 
-> Answer here
+> The main advantage of the first representation is that you have a seperate item for the doctor. Therefore, you could extract a doctor's info, appointments, and specialty a lot quicker. The main disadvantage is that it may be difficult to track a patient's appointment since it's nested inside the doctor's names. 
+
+The main advantage of the second one is that it's easier to see all of the appointments listed at once. Howevever, it would be difficult to pull up the appointments by doctor since they are nested in the appointment variable.
 
 ## Tying It Together
 
@@ -253,13 +333,27 @@ You've been tasked with building an in-browser tic-tac-toe game.
 a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
-  > Answer here
+  > Player:
+    username
+    password
+
+    Game:
+    token
+    position of x's and o's
+
 
 b.  How might those entities be represented in JavaScript code?
 
-  > Answer here
+  > var player = {
+    username: "susy6688",
+    password: "jfhsbdfbhs",
+  }
+  var game = {
+    token: 'x'
+    position: '1'
+  }
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
-  > Answer here
+I chose to track the players because they will need to login to be able to get matched up with other players. They would just need a username and password. I also chose to track the game itself because that's a vital part of the game. The token and their positions needs to be tracked to see who will win and lose.
