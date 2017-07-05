@@ -147,8 +147,9 @@ var allHaveAtLeastTwoVowels = function(words){
 // Input: an array of words
 // Output: `true` if there are ANY words have two or more vowels,
 //          `false` otherwise.
-var anyHaveAtLeastTwoVowels = function(words){
-  // Your Code Here
+var anyHaveAtLeastTwoVowels = function(words) {
+  for (var i = 0; i < words.length; i++) {
+  }
 };
 
 // #11
