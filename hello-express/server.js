@@ -1,5 +1,11 @@
 const express = require('express');
+const hbs = require('hbs');
+
 const app = express();
+app.set("view engine", "hbs");
+
+app.use(express.static(__dirname + '/public'));
+
 
 app.get('/', (req, res) => {
     // console.log(req.query);
@@ -10,24 +16,37 @@ app.get('/', (req, res) => {
 });
 
 app.get('/greeting', (req, res) => {
-    res.send('Hey, WDI 11!');
+    // res.send('Hey, WDI 11!');
+    //render the file called greeting
+    res.render('greeting', {
+      data: req.query.saying,
+      name: req.query.firstName,
+    });
+});
+
+app.get('/favorite-foods', function(req, res) {
+    var favoriteFoods = ["Jeni's almond butter brittle ice cream", 'Tacos from Superica', 'a breakfast sandwich from Gjelina to go in Venice', 'Croissants from Bottega Louie in downtown Los Angeles', 'Pizza from Little Star in San Francisco'];
+    
+    res.render('favorite-foods', {
+        data: favoriteFoods
+    });
 });
 
 app.get('/rihanna', (req, res) => {
     res.send('Work work work work');
 });
 
-// app.get('/:name', (req, res) => {
-//     console.log(req.query);
-//     console.log(req.route);
-//     console.log(req.params);
+app.get('/:name', (req, res) => {
+    console.log(req.query);
+    console.log(req.route);
+    console.log(req.params);
 
-//   if(req.query.human){
-//     res.send(`Hello, ${req.params.name}`);
-//   } else {
-//     res.send(`Hello, smart toaster`);
-//   }
-// })
+  if(req.query.human){
+    res.send(`Hello, ${req.params.name}`);
+  } else {
+    res.send(`Hello, smart toaster`);
+  }
+})
 
 app.get('/users/:user_id/friends/:friend_id', (req, res) => {
     res.send(`Hello User #:${req.params.user_id}. Your friend is User#: ${req.params.friend_id}`);
@@ -67,7 +86,17 @@ app.get('/math/:operator', (req, res) => {
     let num2 = parseInt(req.query.num2);
 
     if (req.params.operator === 'add') {
-        res.send(`${num1} + ${num2}`)
+        var sum = parseInt(req.query.num1) + parseInt(req.query.num2);
+        res.send(`${sum}`);
+    } else if (req.params.operator === 'subtract') {
+        var subtract = parseInt(req.query.num1) - parseInt(req.query.num2);
+        res.send(`${subtract}`);
+    } else if (req.params.operator === 'multiply') {
+        var multiply = parseInt(req.query.num1) * parseInt(req.query.num2);
+        res.send(`${multiply}`);
+    } else if (req.params.operator === 'divide') {
+        var divide = parseInt(req.query.num1) / parseInt(req.query.num2);
+        res.send(`${divide}`);
     }
 })
 
