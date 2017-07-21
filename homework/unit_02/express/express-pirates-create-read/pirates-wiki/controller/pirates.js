@@ -4,19 +4,19 @@ var pirates = require('../models/pirates.js');
 
 //all routes for /pirate
 router.get('/', (req, res) => {
-    res.render('index', {
-        data: pirates.name
+    res.render('pirates/index', {
+        data: pirates
     })
 });
 
 router.get('/new', (req, res) => {
-    res.render('new', {
+    res.render('pirates/new', {
 
     })
 });
 
 router.get('/:id', (req, res) => {
-    res.render('show', {
+    res.render('pirates/show', {
         data: 'hello'
     })
 });

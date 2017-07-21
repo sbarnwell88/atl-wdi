@@ -1,0 +1,8 @@
+
+<h3>This list contains {{pirates.length}} Pirates</h3>
+<ul>
+  {{#each data}}
+    <li><a href="/pirates/{{@index}}"><h2>{{name}}</h2></a></li>
+  {{/each}}
+</ul>
+<a href="#">Create A New Pirate</a>
