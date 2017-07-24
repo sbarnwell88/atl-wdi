@@ -1,0 +1,14 @@
+h1 {
+    font-weight: bold;
+    font-size: 60px;
+    color: green;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    text-align: left;
+}
+button {
+    background: black;
+    color: white;
+}
