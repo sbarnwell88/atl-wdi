@@ -25,3 +25,7 @@ promise
         console.log('REJECTED!');
         return "REJECTED!";
     });
+
+        function onReject (error) {
+      // Your solution here
+    }

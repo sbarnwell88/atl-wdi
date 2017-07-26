@@ -27,17 +27,17 @@ class Tamagotchi {
         this.hungerTime = setInterval(function(){ 
             this.cry(); 
         }, 6000);
-        console.log(secondOne);
         this.yawnTimer = setInterval(function() {
             this.yawn();
         }, 10000);
-        console.log(thirdOne);
         this.sickTimer = setInterval(function() {
             this.puke();
         }, 20000);
     }
     stop() {
-        clearInterval(this.yawnTimer, this.hungerTime, this.sickTimer)
+        clearInterval(this.yawnTimer);
+        clearInterval(this.hungerTime);
+        clearInterval(this.sickTimer);
     }
 }
 
