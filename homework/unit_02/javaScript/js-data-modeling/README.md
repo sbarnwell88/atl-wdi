@@ -31,7 +31,57 @@ This app provides easy access to all your e-mail service providers in one app. T
 
 ```
 Write your answer here or in a separate js file.
-```
+
+Data Model:
+User
+- ID number
+- First Name
+- Last Name
+- Age
+- List of email addresses
+
+Email Service Provider
+- ID Number
+- Email Address
+- Password
+- Emails
+- Folders
+
+Javascript Objects: 
+
+const user = {
+  id: number,
+  firstName: string,
+  lastName: string,
+  age: number,
+  list of emails: [ ]
+}
+
+const emailProvider = {
+  id: number,
+  email address: string,
+  password: string,
+  emails: [ ],
+  folders: [ ]
+}
+
+Relationships:
+
+const user = {
+  id: 12344,
+  firstName: "Jerry",
+  lastName: "Seinfeld",
+  age: 70,
+  emailProviders: [ 
+    gmail {
+      emailAddress: "jerry@gmail.com",
+      password: "password1",
+      emails: [],
+      folders: []
+    }
+  ]
+}
+
 
 ### 2. Radio on the Internet app
 
@@ -40,7 +90,56 @@ This app hosts a ton of radio stations, each featuring their own playlists of so
 
 ```
 Write your answer here or in a separate js file.
-```
+Data Model:
+
+User
+- ID Number
+- Username
+- Password
+- Preferences by genre
+- Preferred stations
+
+Radio Station
+- ID Number
+- Name
+- Channel
+- Genre
+- Songs
+- Playlists
+
+Javascript Object
+const user = {
+  id: number,
+  username: string,
+  password: string,
+  genrePreferences: [],
+  preferredStations: []
+}
+
+const station = {
+  id: number,
+  name: string,
+  channel: number,
+  genre: string,
+  songs: [],
+  playlists: []
+}
+
+Relationships
+
+const user = {
+  id: 1234,
+  username: "jerrys",
+  password: "password1",
+  genrePreferences: ['rock', 'rap'],
+  preferredStations: [{
+    stationName: "NPR",
+    channel: 90.1,
+    genre: "news",
+    songs: [],
+    playlists: []
+  }]
+}
 
 ### 3. Rock Concert App
 
@@ -48,11 +147,113 @@ This app will be a tool for managing all of your favorite bands' concerts; it wi
 
 ```
 Write your answer here or in a separate js file.
-```
+Data Model:
+
+User
+- ID
+- Username
+- Password
+- Favorite Bands
+
+Bands
+- ID
+- Name
+- Genre
+- Tour dates
+
+Javascript Object:
+
+const user = {
+  id: number,
+  username: string,
+  password: string,
+  favoriteBands: []
+}
+
+const bands = {
+  id: number,
+  name: string,
+  genre: string,
+  tourDates: number
+}
+
+Relationships
+
+const user = {
+  id: 1234,
+  username: "jerryseinfeld",
+  password: "password1",
+  favoritaBands: [{
+    name: "Queen",
+    genre: "classic rock",
+    tourDates: 9/1,
+  }]
+}
+
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
+
+Data model:
+
+User
+- ID
+- Username
+- Password
+- Location
+- List of coffeeshops
+
+Coffeeshop
+- ID
+- Menu
+- Location
+- Items purchased
+
+Shopping Cart
+- ID
+- Items
+- Total
+- Past orders
+
+Javascript Object:
+const user = {
+  id: number,
+  username: string,
+  password: string,
+  location: string,
+  coffeeshopList: []
+}
+const coffeeshop = {
+  id: number,
+  menuItems: [],
+  location: string,
+  itemsPurchased: []
+}
+const shoppingCart = {
+  id: number,
+  items: [],
+  total: number,
+  pastOrders: []
+}
+
+Relationships:
+const user = {
+  id: 1234,
+  username: 'jerrysienfeld',
+  password: 'password1',
+  location: 'address',
+  coffeeshopList: [{
+    menuItems: ['coffee', 'latte', 'capuccino'],
+    location: 'address',
+    itemsPurchased: [{
+      items: [],
+      total: 10.50,
+      pastOrders: []
+    }]
+  }]
+}
+
 
 ### 5. Team Tracker App
 
@@ -60,16 +261,66 @@ This app shows you all the latest stats from your favorite sports teams. You can
 
 ```
 Write your answer here or in a separate js file.
-```
+Data Model: 
 
+User
+- ID
+- Username 
+- Password
+- Favorite Teams
+
+Favorite Teams 
+- ID
+- Players
+- Games
+- Player Stats
+- Team Stats
+
+Players
+- Name
+- Stats
+
+Javascript Object:
+
+const user = {
+  id: number,
+  username: string,
+  password: string,
+  favoriteTeams: []
+}
+const favoriteTeams = {
+  id: number,
+  name: string,
+  players: [],
+  games: [],
+  playerStats: [],
+  teamStats: []
+}
+const player = {
+  name: string,
+  stats: []
+}
+
+Relationships
+const user = {
+  id: 1234,
+  username: 'jerryseinfeld',
+  password: 'password1'
+  favoriteTeams: [{
+    teamName: 'Atlanta Falcons',
+    teamStats: [],
+    playerStats: [{
+      name: 'Matt Ryan',
+      starts: ['MVP', ...]
+    }],
+  }]
+}
 
 ### Final Thoughts:
 
 Q. When you were creating relationships between the models, what were some thoughts or questions you had to help guide a connection between them?
 
-```
-Write your answer here or in a separate js file.
-```
+- I had to think about how these items are connected and what the best way to connect them was. 
 
 ### Reading and Videos for Tomorrow
 Now that you've had some practice really thinking about the data design of an app, we're going to learn about MongoDB, a no-SQL database. Starting tomorrow, our Express apps will be talking to the Mongo database through Mongoose. Since we're covering a LOT of ground tomorrow, take some time to introduce yourself to concepts and lingo surrounding MongoDB and Mongoose. You will _not_ have to memorize the technical details here.
