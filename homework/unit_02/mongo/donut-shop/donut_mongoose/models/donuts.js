@@ -13,18 +13,16 @@ var donutSchema = new Schema({
     qty: Number
 });
 
-donutSchema.pre('save', function(next){
-  now = new Date();
-  this.updated_at = now;
-  if ( !this.created_at ) {
-    this.created_at = now;
-  }
-  next();
-});
+// donutSchema.pre('save', function(next){
+//   now = new Date();
+//   this.updated_at = now;
+//   if ( !this.created_at ) {
+//     this.created_at = now;
+//   }
+//   next();
+// });
 
-var donutModel = mongoose.model("Donuts", donutSchema);
+var DonutModel = mongoose.model("Donuts", donutSchema);
 
 //export your donut with module.exports()
-module.exports = {
-  Donuts: donutModel
-};
+module.exports = DonutModel;
