@@ -8,21 +8,23 @@ mongoose.Promise = global.Promise;
 var donutSchema = new Schema({
     name: String,
     description: String,
-    img: { data: Buffer, contentType: String },
+    img: String,
     price: Number,
     qty: Number
 });
 
-{
-    name: "Chocolate Donut",
-    description: "I am a chocolate donut.",
-    img: "http://cdn.phillymag.com/wp-content/uploads/2013/09/donut.png",
-    price: 5,
-    qty: 99
-}
+donutSchema.pre('save', function(next){
+  now = new Date();
+  this.updated_at = now;
+  if ( !this.created_at ) {
+    this.created_at = now;
+  }
+  next();
+});
+
+var donutModel = mongoose.model("Donuts", donutSchema);
 
 //export your donut with module.exports()
 module.exports = {
-  User: UserModel,
-  Item: ItemModel
+  Donuts: donutModel
 };
