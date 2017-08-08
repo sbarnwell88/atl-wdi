@@ -49,7 +49,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Search searchByTitle={this._searchByTitle} searchById={this._searchById} movie={this.state.movie}/>
+        <Search 
+        searchByTitle={this._searchByTitle} 
+        searchById={this._searchById} 
+        movie={this.state.movie}/>
         <Movie 
         title={this.state.title}
         year={this.state.year}
