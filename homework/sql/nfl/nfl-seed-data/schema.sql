@@ -1,4 +1,4 @@
-wdrop table if exists players;
+drop table if exists players;
 drop table if exists teams;
 
 create table teams(
