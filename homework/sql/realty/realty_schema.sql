@@ -1,5 +1,5 @@
 drop table if exists storefront;
-drop table if exists offices;
+drop table if exists office;
 drop table if exists apartment;
 
 CREATE TABLE apartment (
