@@ -17,13 +17,14 @@ CREATE TABLE apartment (
 CREATE TABLE office (
     id serial primary key,
     office_number integer,
-    address varchar,
-    occupied_status boolean,
-    price integer,
-    kitchen_available boolean,
+    number_floors integer,
     sq_ft integer,
-    owner varchar,
-    outdoor_seating boolean NOT NULL DEFAULT FALSE
+    cubicles integer,
+    number_bathrooms integer,
+    address varchar not null,
+    company_name varchar,
+    occupied_status boolean,
+    price integer
 );
 
 CREATE TABLE storefront (
