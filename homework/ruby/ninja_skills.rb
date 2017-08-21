@@ -46,12 +46,40 @@
 # end
 # double(6)
 
-puts "What's your name?"
-user_name = gets.chomp
-puts "What do you like to do?"
-user_like = gets.chomp
+# puts "What's your name?"
+# user_name = gets.chomp
+# puts "What do you like to do?"
+# user_like = gets.chomp
 
-puts "#{user_name} likes to #{user_like}"
+# puts "#{user_name} likes to #{user_like}"
+
+# 6. 
+# myFirstArray = []
+
+# myFirstArray = ["a", "b", "c", "d", "e", 1, 2, 3, 4]
+
+# puts myFirstArray[-1]
+# puts myFirstArray[0]
+
+# myFirstArray[1] = "Joe"
+# myFirstArray[2] = 3
+# myFirstArray.push("true")
+# puts myFirstArray[3].class
+
+# 7. 
+# myFavoriteAnimals = {
+#     "Venus"=> "Dog",
+#     "Ziggy"=> "Cat",
+#     "Edgar"=> "Donkey",
+#     "Piggy"=> "Pig",
+#     "Froggy"=> "frog"
+# }
+# myFavoriteAnimals["Edgar"] = "Bear"
+myFavoriteMovie = {}
+myFavoriteMovie[:movie] = "Office Space"
+puts myFavoriteMovie
+
+
 
 
 
