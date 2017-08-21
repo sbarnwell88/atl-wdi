@@ -8,12 +8,20 @@
 
 #  2. 
 
- c = "Nil"
+#  c = "Nil"
 
- puts c
- puts "#{c} was here"
+#  puts c
+#  puts "#{c} was here"
 
- puts c.class
+#  puts c.class
 
- 
+#  3. 
 
+d = 2
+puts d
+
+e = 2.5
+puts e
+
+d = e
+puts d
