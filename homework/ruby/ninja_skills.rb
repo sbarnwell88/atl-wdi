@@ -75,9 +75,50 @@
 #     "Froggy"=> "frog"
 # }
 # myFavoriteAnimals["Edgar"] = "Bear"
-myFavoriteMovie = {}
-myFavoriteMovie[:movie] = "Office Space"
-puts myFavoriteMovie
+# myFavoriteMovie = {}
+# myFavoriteMovie[:movie] = "Office Space"
+
+# 8. 
+
+firstRange = (1..10)
+firstRange.to_a
+
+# secondRange = (1...1000)
+# secondRange.to_a
+
+# for number in firstRange
+#     puts number.to_s
+# end
+
+# x = 0
+# secondRange = secondRange.to_a
+# while x < 50 do
+#  puts secondRange[x]
+#     x += 1
+# end
+# newArray = []
+# firstRange.each_with_index do |val, index|
+#     val.even? 
+#     newArray.push(val * 2)
+# end
+# puts newArray
+
+firstRange.map do |number|
+    if number.even?
+        puts number.to_s
+    end
+end
+ 9. 
+ 
+
+
+
+
+
+
+
+
+
 
 
 
