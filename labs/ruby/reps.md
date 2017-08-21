@@ -14,6 +14,7 @@ Write a method `lengths` that accepts a single parameter as an argument, namely 
 words = ["hello", "what", "is", "up", "dude"]
 lengths(words)  # => [5, 4, 2, 2, 4]
 ```
+words.map{|word| puts word.length}
 ---
 
 ## For Real Now
@@ -33,6 +34,20 @@ fizzbuzzer(15) # => "FizzBuzz"
 fizzbuzzer(19) # => "Sorrels"
 ```
 
+i = 0
+while i < 101
+  if i % 3 == 0 && i % 5 == 0 
+    puts "FizzBuzz"
+      elsif i % 3 == 0 
+        puts "Fizz"
+      elsif i % 5 == 0 
+        puts "Buzz"
+      else puts i 
+    end 
+  i += 1
+  break if i == 100
+end 
+
 ### Round 2
 
 Write a method `hasher` that accepts a single parameter as an argument, an array of arrays, and returns a hash based on the following conditions:
@@ -46,6 +61,23 @@ So given:
 array_to_test = [ ["Husker","Adama"], ["DrRobotmck"], [] ]
 hasher(array_to_test)  # => {"Husker" => "Adama", "DrRobotmck" => nil}
 ```
+hasher = array_to_test.map do |arr|
+  if arr.length > 1
+    puts arr[0] => arr[1]
+  elsif arr.length == 1
+    puts arr[0] => nil
+  end
+end
+
+  def hasher(array)
+   array.map do |arr|
+   if arr.length > 1
+     puts arr[0] => arr[1]
+   elsif arr.length == 1
+     puts arr[0] => nil
+   end
+ end
+ end 
 
 ### Round 3
 
@@ -64,6 +96,11 @@ hash_switcher({"hello" => "world"})
 hash_switcher([ {"hello" => "world"}, {"yo" => "lo"} ])
 # => [{"world" => "hello"}, {"lo" => "yo"}]
 ```
+
+def hash_switcher(array)
+  array.invert
+end
+
 
 ### Round 4
 
@@ -86,6 +123,8 @@ export_hash(["happy", "sad"], ["joy"])
 export_hash(["happy happy"], 5)
 # => nil
 ```
+
+
 
 ### Round 5
 
