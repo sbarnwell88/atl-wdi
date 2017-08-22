@@ -80,8 +80,8 @@
 
 # 8. 
 
-firstRange = (1..10)
-firstRange.to_a
+# firstRange = (1..10)
+# firstRange.to_a
 
 # secondRange = (1...1000)
 # secondRange.to_a
@@ -103,13 +103,24 @@ firstRange.to_a
 # end
 # puts newArray
 
-firstRange.map do |number|
-    if number.even?
-        puts number.to_s
-    end
+# firstRange.map do |number|
+#     if number.even?
+#         puts number.to_s
+#     end
+# end
+#  9. 
+
+def sum(number)
+    y = 0
+    (1..1000).each {|x| y += x i % 3 == 0 || i % 5 == 0}
+    return y
 end
- 9. 
- 
+
+puts y
+
+10. 
+
+
 
 
 
