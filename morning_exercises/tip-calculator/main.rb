@@ -1,7 +1,6 @@
 # asking for subtotal
-p "whats your subtotal"
-subtotal = gets.chomp.to_f
 
+<<<<<<< HEAD
 p subtotal
 
 p "number of people"
@@ -49,13 +48,9 @@ p 'tax value is #{tax_value}'
 p tax_value
 tip_value = subtotal * tip_percent
 p tip_value
+=======
+# meal_with_tax = subtotal + tax_value
+
+>>>>>>> 4e9c5878555fdd6d3ffb877a9799faac26851545
 # total_value = meal_with_tax * tip_percent/100
 # total = meal_with_tax + tip_value
-total = subtotal + tax_value + tip_value
-total_pp = total/people
-
-puts "total is #{total}"
-puts "each person pays #{total_pp}"
-
-
-
