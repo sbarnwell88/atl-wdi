@@ -42,7 +42,9 @@ p tax_percent
 
 
 tax_value = subtotal * (tax_percent/100.0)
+
 # meal_with_tax = subtotal + tax_value
+
 p 'tax value is #{tax_value}'
 p tax_value
 tip_value = subtotal * tip_percent
